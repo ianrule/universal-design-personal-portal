@@ -1,0 +1,78 @@
+/* "Cascading" Style Sheet means that things that come after override what came before */
+/* serif and san serif, can download fonts or use font-style on Google Fonts */
+/* Adobe Color - accessibility tool under create */
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@700&family=Open+Sans:wght@300;700&display=swap');
+
+body {
+    background-color: #316CC4;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+}
+
+p {
+    color: #FFFFFF;
+    line-height: 1.5em;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 1.7em;
+}
+
+h2 {
+    font-size: 1.3em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 1.8em;
+}
+
+nav ul li a:link {
+    color: white;
+}
+
+nav ul li a:visited {
+    color: white;
+}
+
+nav ul li a:hover {
+    color: grey;
+}
+
+nav ul li a:active {
+    color: darkblue;
+}
+
+/* Hide only visually, but have it available for screen readers */
+.sr-only {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}

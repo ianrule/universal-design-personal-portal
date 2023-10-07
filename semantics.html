@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic HTML5</title>
+    <link href="css/semantics.css" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- class can be used multiple times on a page, links can only be used once -->
+    <!-- optimize images using save for web in photoshop -->
+    <!-- width and heigth attributes good for images so placeholders load before images when page pulled up in browser -->
+
+    <div class="container">
+
+        <!-- main heading of page - only use h1 once per page -->
+        <header>
+            <h1>Proper use of html5 semantic markup</h1>
+        </header>
+
+        <!-- main navigation links to relative internal links only (do not use nav twice) -->
+        <nav>
+            <h2 class="sr-only">Main Navigation</h2>
+            <ul>
+                <li><a href="#">LINK 1</a></li>
+                <li><a href="#">LINK 2</a></li>
+                <li><a href="#">LINK 3</a></li>
+            </ul>
+        </nav>
+
+        <!-- main content of the page -->
+        <main>
+            <!-- grouping content together -->
+            <section>
+                <h2>latin "dummy" text</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi quaerat at autem pariatur? Consequuntur iusto aspernatur reprehenderit mollitia, repellendus necessitatibus placeat quisquam blanditiis hic consectetur dolorem rem provident iste autem.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, assumenda dolores exercitationem odit nostrum cum iste eaque repellat cumque nulla ipsam, omnis tempore, in totam enim explicabo voluptatum accusantium commodi!
+                </p>
+                <!-- informational image -->
+                <figure>
+                    <img src="http://placehold.it/300x300" alt="verbal description">
+                    <figcaption>image title</figcaption>
+                </figure>
+                <!-- supplementary info -->
+                <aside>
+                    <h2>supplementary latin links</h2>
+                    <ul>
+                        <li><a href="#">how to learn latin</a></li>
+                    </ul>
+                </aside>
+            </section>
+        </main>
+        
+        <!-- supplmentary page info -->
+        <aside>
+            <h2>supplementary social media links</h2>
+            <ul>
+                <li><a href="#">twitter</a></li>
+            </ul>
+        </aside>
+
+        <!-- footer of page -->
+        <footer>
+            <p>designed by me</p>
+            <address>email@colorado.edu</address>
+            <small>&copy; 2023</small>
+        </footer>
+
+    </div> <!-- end container -->
+
+</body>
+</html>
