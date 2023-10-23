@@ -1,0 +1,176 @@
+
+/* imports */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+body {
+    background-color: #FFFFFF;
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+}
+
+.skip-link {
+    background: black;
+    color: #fff;
+    font-weight: 700;
+    padding: 4px;
+    position: absolute;
+    transform: translateY(-200%);
+}
+    
+    .skip-link:focus {
+        transform: translateY(-90%);
+    }
+  
+    .skip-link {
+    /* Same as  before */
+    transition: transform 0.3s;
+    }
+
+h1,
+h2,
+h3 {
+    font-family: 'Merriweather', serif;
+}
+
+    h1 {
+        font-size: 1.7em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+nav ul li {
+    list-style: none;
+}
+
+    nav ul li a {
+        text-decoration: none;
+        font-size: 1.3em;
+    }
+
+    nav ul li a:link {
+        color: #0258A8;
+    }
+
+    nav ul li a:visited {
+        color: #595959;
+    }
+
+    nav ul li a:hover {
+        text-decoration: underline;
+    }
+
+    nav ul li a:active {
+        color: #B01700;
+    }
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5em;
+}
+
+mark {
+    background-color: yellow;
+}
+
+strong {
+    font-weight: bold;
+}
+
+i {
+    font-style: italic;
+}
+
+em {
+    font-style: italic;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+}
+
+    input:focus {
+        background: black;
+        color: white;
+        outline: 4px solid yellow;
+        border: none;
+    }
+
+    input:not([type="submit"]):valid {
+        border: 2px solid green;
+    }
+
+    input:not([type="submit"]):invalid {
+        border: 2px solid red;
+    }
+
+textarea {
+    display: block;
+    margin-top:10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+}
+
+    textarea:focus {
+        background: black;
+        color: white;
+        outline: 4px solid yellow;
+        border: none;
+    }
+
+    textarea:valid {
+        border: 2px solid green;
+    }
+
+    textarea:invalid {
+        border: 2px solid red;
+    }
+
+table, th, td {
+    border-collapse: collapse;
+}
+
+table {
+    margin-bottom: 30px;
+}
+
+td {
+    border: 2px solid black;
+    padding: 0px 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0 auto;
+}
+
+/* hide only visually, but have it available for screen readers */
+.sr-only {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}

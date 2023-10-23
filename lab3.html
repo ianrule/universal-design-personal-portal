@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- title -->
+    <title>Semantic HTML5 "Lifted Content" Page</title>
+
+    <!-- linking css -->
+    <link href="css/lab3.css" rel="stylesheet">
+</head>
+<body>
+    <!-- edit page width -->
+    <div class="container">
+        <!-- skip navigation -->
+        <a class="skip-link" href="#maincontent">Skip to main content</a>
+
+        <!-- main heading of page -->
+        <header>
+            <h1>Semantic HTML5 "Lifted Content" Page</h1>
+            <p>Due Date: <time datetime="2023-10-23">October 23, 2023</time></p>
+        </header>
+
+        <!-- main navigation for linking to different sections -->
+        <nav>
+            <h2 class="sr-only">Page Navigation</h2>
+            <ul>
+                <li><span aria-hidden=”true” class="material-icons">code</span> <a href="#semantic-examples">Semantic HTML5 Element Examples</a></li>
+                <li><span aria-hidden=”true” class="material-icons">check_box</span> <a href="#form">Accessible Form</a></li>
+                <li><span aria-hidden=”true” class="material-icons">dataset</span> <a href="#data-table">Accessible Data Table</a></li> 
+            </ul>
+        </nav>
+
+        <!-- main content of the page -->
+        <main id="maincontent">
+            <!-- specific HTML5 elements section -->
+            <section id="semantic-examples">
+                <h2>Examples of Super Specific Semantic HTML5 Elements</h2>
+                <ul>
+                    <li>This is an example of <mark>"marked or highlighted text"</mark>.</li>
+                    <li>This is an example of <strong>text with "strong importance"</strong>.</li>
+                    <li>This is an example of <i>text that is in an alternate tone or mood</i>.</li>
+                    <li>This is an example of <em>text that has stressed emphasis compared to the text around it</em>.</li>
+                    <li>
+                        <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">This is an example of a long "block quote" quotation <cite>[MDN Web Docs]</cite>.</blockquote>
+                    </li>
+                    <li>This is an example of an abbreviation: <abbr title="Mozilla Developer Network">MDN</abbr> (Mozilla Developer Network)</li>
+                    <li>
+                        This is an example of a details element:
+                        <details>
+                            <summary>Description of details element</summary>
+                            <p>A "details" element allows you to hide the details of whatever it is you are trying to describe in this section of your website. You provide it a "summary" element to give the viewer a visible summary of what the collapsable detailed text describes.</p>
+                        </details>
+                    </li>
+                    <li>
+                        This is an example of a code element:
+                        <code>
+                            &lt;html&gt;
+                            &lt;/html&gt;
+                        </code>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- accessible form section -->
+            <section id="form">
+                <h2>Mock Accessible Job Application Form</h2>
+                <form id="job-application" method="post">
+                    <fieldset>
+                        <legend>Apply for a job with us!</legend>
+                        
+                        <!-- name input -->
+                        <label for="name">
+                            Enter your full name *
+                            <input type="text" id="name" placeholder="Ex. Ian Rule" required>
+                        </label>
+
+                        <!-- age input -->
+                        <label for="age">
+                            Enter your age *
+                            <input type="number" id="age" required>
+                        </label>
+
+                        <!-- email input -->
+                        <label for="email">
+                            Enter your email address *
+                            <input type="email" id="email" placeholder="Ex. ian@ianrule.com" required>
+                        </label>
+
+                        <!-- phone input -->
+                        <label for="phone">
+                            Enter your phone number (if you have one)
+                            <input type="tel" id="phone" minlength="10" placeholder="Ex. 303-656-8482">
+                        </label>
+
+                        <!-- website input -->
+                        <label for="website">
+                            Enter the <abbr title="Uniform Resource Locator">URL</abbr> (Uniform Resource Locator) to your website (if you have one)
+                            <input type="url" id="website">
+                        </label>
+
+                        <!-- written response -->
+                        <label for="written-response">
+                            Tell us why you want to work for us
+                            <textarea id="written-response" rows="5" cols="33" required></textarea>
+                        </label>
+
+                        <input type="submit" value="Apply!">
+                    </fieldset>
+                </form>
+            </section>
+
+            <!-- accessible data table section -->
+            <section id="data-table">
+                <h2>Accessible Data Table</h2>
+                <table>
+                    <!-- caption -->
+                    <caption>Popular DJs Seperated By Genre</caption>
+
+                    <!-- table header -->
+                    <thead>
+                        <tr>
+                            <th scope="col">House DJs</th>
+                            <th scope="col">Dubstep DJs</th>
+                            <th scope="col">Pop DJs</th>
+                        </tr>
+                    </thead>
+
+                    <!-- table body -->
+                    <tbody>
+                        <tr>
+                            <td>Chris Lake</td>
+                            <td>Fisher</td>
+                            <td>John Summit</td>
+                        </tr>
+                        <tr>
+                            <td>Excision</td>
+                            <td>Subtronics</td>
+                            <td>Wooli</td>
+                        </tr>
+                        <tr>
+                            <td>Tiesto</td>
+                            <td>Illenium</td>
+                            <td>Marshmello</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+        <!-- footer of page -->
+        <footer>
+            <h2 class="sr-only">Page Footer</h2>
+            <p>Page made by Ian Rule</p>
+            <address>ian.rule@colorado.edu</address>
+            <small>&copy; 2023</small>
+        </footer>
+    </div>
+</body>
+</html>

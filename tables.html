@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Tables</title>
+    <style>
+
+        table, th, td {
+          border-collapse: collapse;
+        }
+  
+        table {
+          margin-bottom: 30px;
+        }
+
+        td {
+          border: 2px solid red;
+          padding: 0px 20px;
+          text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <h1>Accessible Table</h1>
+    </header>
+
+    <!-- table section -->
+    <section>
+        <h2>Tables Done Right</h2>
+        <table>
+            <!-- what kind of data table is this? -->
+            <caption>Animals that can kill you</caption>
+            <!-- top line of data table -->
+            <thead>
+                <tr>
+                    <th scope="col">Lions</th>
+                    <th scope="col">Tigers</th>
+                    <th scope="col">Bears</th>
+                </tr>
+            </thead>
+            <!-- actual data itself -->
+            <tbody>
+                <tr>
+                    <td>Simba</td>
+                    <td>Tigger</td>
+                    <td>Winny</td>
+                </tr>
+                <tr>
+                    <td>Cecil</td>
+                    <td>Tygra</td>
+                    <td>Baloo</td>
+                </tr>
+                <tr>
+                    <td>Mufasa</td>
+                    <td>Tony</td>
+                    <td>Yogi</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>
