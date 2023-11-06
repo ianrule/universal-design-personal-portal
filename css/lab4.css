@@ -1,0 +1,188 @@
+/* font import */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@300&display=swap');
+
+/* css reset */
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* default css */
+/* ----------- */
+/* body style */
+body {
+    background: #FFFFFF;
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+}
+/* headings */
+h1,
+h2,
+h3 {
+    font-family: 'Merriweather', serif;
+}
+
+    h1 {
+        font-size: 1.7em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+/* paragraphs */
+p {
+    margin: 1.5em 0;
+    line-height: 1.5em;
+}
+/* hide only visually, but have it available for screen readers */
+.sr-only {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+/* page section formatting */
+/* ----------------------- */
+/* container/grid area template */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns:
+        1fr 2fr 1fr;
+    grid-template-areas:
+        "mainhead mainhead mainhead"
+        "mainnav mainnav mainnav"
+        "djaside maincontent mhaside"
+        "djaside maincontent mhaside"
+        "djaside maincontent mhaside"
+        "pgfooter pgfooter pgfooter";
+}
+/* padding and border */
+header,
+nav,
+main,
+aside,
+footer {
+    padding: 1.5em;
+    border: 1px black solid;
+}
+/* main header */
+header {
+    grid-area: mainhead;
+    background: #1F4273;
+    text-align: center;
+}
+/* main nav */
+nav {
+    grid-area: mainnav;
+    background: #E3E3E3;
+}
+    nav ul {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+    }
+        nav ul li {
+        list-style: none
+        }
+        nav ul li a {
+            text-decoration: none;
+            font-size: 1.3em;
+        }
+        nav ul li a:link {
+            color: #0258A8;
+        }
+        nav ul li a:visited {
+            color: #7D00FA;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        nav ul li a:active {
+            color: #B01700;
+        }
+/* main content */
+main {
+    grid-area: maincontent;
+    background: #346FC2;
+}
+/* dj aside */
+#djing {
+    grid-area: djaside;
+    background: #464A4F;
+}
+/* mental health aside */
+#mentalhealth {
+    grid-area: mhaside;
+    background: #464A4F;
+}
+/* footer */
+footer {
+    grid-area: pgfooter;
+    background: #232A33;
+    text-align: center;
+}
+    footer p {
+        margin: 0 0;
+    }
+/* media screens */
+@media screen
+and (min-width: 641px)
+and (max-width: 900px)  {
+    /* container grid area template */
+    .container {
+        grid-template-columns:
+            1fr 1fr;
+        grid-template-areas:
+            "mainhead mainhead"
+            "mainnav mainnav"
+            "maincontent maincontent"
+            "djaside mhaside"
+            "pgfooter pgfooter";
+    }
+}
+@media screen
+and (max-width: 640px)  {
+    /* container grid area template */
+    .container {
+        grid-template-columns:
+            1fr;
+        grid-template-areas:
+            "mainhead"
+            "mainnav"
+            "maincontent"
+            "djaside"
+            "mhaside"
+            "pgfooter";
+    }
+
+    /* vertical nav */
+    nav ul {
+        flex-flow: column nowrap;
+        text-align: center;
+    }
+        nav ul li a {
+            display: block;
+            padding: 10px 5px;
+            margin: 5px;
+            border: 1px black solid;
+            background: white;
+        }
+}
