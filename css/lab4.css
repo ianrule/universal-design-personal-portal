@@ -44,6 +44,7 @@ p {
 }
 /* hide only visually, but have it available for screen readers */
 .sr-only {
+    color: #000000;
     border: 0;
     clip: rect(0, 0, 0, 0);
     height: 1px;
