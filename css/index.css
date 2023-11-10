@@ -2,18 +2,43 @@
 /* import for fonts */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@300&display=swap');
 
+/* css reset */
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* default css */
+/* ----------- */
+/* body style */
 body {
     background-color: #FFFFFF;
     color: #000000;
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
 }
-
-.container {
-    max-width: 960px;
-    margin: 0 auto;
+/* skip link */
+.skip-link {
+    background: black;
+    color: #fff;
+    font-weight: 700;
+    padding: 4px;
+    position: absolute;
+    transform: translateY(-200%);
 }
-
+    
+    .skip-link:focus {
+        transform: translateY(-25%);
+    }
+  
+    .skip-link {
+    /* Same as  before */
+    transition: transform 0.3s;
+    }
+/* headings */
 h1,
 h2,
 h3 {
@@ -31,18 +56,11 @@ h2 {
 h3 {
     font-size: 1.2em;
 }
-
-.center {
-    margin: auto;
-    width: 960px;
+/* paragraphs */
+p {
+    margin: 1.5em 0;
+    line-height: 1.5em;
 }
-
-.custom-nav {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.3em;
-    display: flex;
-}
-
 /* hide only visually, but have it available for screen readers */
 .sr-only {
     border: 0;
@@ -54,4 +72,157 @@ h3 {
     position: absolute;
     white-space: nowrap;
     width: 1px;
+}
+
+/* page section formatting */
+/* ----------------------- */
+/* container/grid area template */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns:
+        1fr;
+    grid-template-areas:
+        "mainhead"
+        "maincontent"
+        "maincontent"
+        "maincontent"
+        "pgfooter";
+}
+/* padding and border */
+header,
+#project-list,
+#about-me {
+    padding: 1.5em 0 0 0;
+}
+footer {
+    padding: 1.5em 0;
+}
+/* main header */
+header {
+    grid-area: mainhead;
+    text-align: center;
+}
+/* main content */
+main {
+    display: grid;
+    grid-area: maincontent;
+    grid-template-columns:
+        1fr;
+    grid-template-areas:
+        "projectlist"
+        "aboutme"
+        "aboutme"
+        "aboutme";
+}
+/* project list */
+#project-list {
+    display: grid;
+    grid-area: projectlist;
+}
+    #project-list h2 {
+        text-align: center;
+    }
+    #project-list nav ul {
+        margin: 1.5em 0 0 0;
+        padding: 1.5em 0;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        text-align: center;
+        background: #E3E3E3;
+    }
+        #project-list nav ul li {
+            list-style: none;
+        }
+        #project-list nav ul li a {
+            text-decoration: none;
+            font-size: 1.3em;
+        }
+        #project-list nav ul li a:link {
+            color: #346FC2;
+        }
+        #project-list nav ul li a:visited {
+            color: #7D00FA;
+        }
+        #project-list nav ul li a:hover {
+            text-decoration: underline;
+        }
+        #project-list nav ul li a:active {
+            color: #B01700;
+        }
+/* about me section*/
+#about-me {
+    display: grid;
+    grid-area: aboutme;
+}
+    #about-me img {
+        border-radius: 50%;
+        width: 250px;
+        height: 250px;
+        display: block;
+        margin: 1.5em auto 0 auto;
+    }
+    #about-me figcaption {
+        text-align: center;
+    }
+/* footer */
+footer {
+    grid-area: pgfooter;
+    background: #232A33;
+    text-align: center;
+    color: white;
+}
+    footer p {
+        margin: 0 0;
+    }
+/* media screens */
+@media screen
+and (min-width: 641px)
+and (max-width: 1200px)  {
+    header,
+    #project-list,
+    #about-me,
+    footer {
+        margin: 0 1.5em;
+    }
+}
+@media screen
+and (max-width: 640px)  {
+    /* paragraphs */
+    p {
+        margin: 1.3em 0;
+    }
+    /* padding and border */
+    header,
+    #project-list,
+    #about-me {
+        padding: 1.3em 0 0 0;
+        margin: 0 1.3em;
+    }
+    footer {
+        padding: 1.3em 0;
+        margin: 0 1.3em;
+    }
+    /* project list section */
+    #project-list nav ul {
+        margin: 0;
+        padding: 1.3em 0 0 0;
+        flex-flow: column nowrap;
+        text-align: center;
+        background: white;
+    }
+        #project-list nav ul li a {
+            display: block;
+            padding: 10px 5px;
+            margin: 5px 0;
+            background: #E3E3E3;
+        }
+    /* about me section */
+    #about-me img {
+        margin: 1.3em auto 0 auto;
+    }
 }
