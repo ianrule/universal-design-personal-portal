@@ -1,0 +1,194 @@
+/*---------------------------
+Final Project CSS Index  
+*****************************
+
+1) Imports
+2) CSS Reset
+3) Typography
+4) Default Page Styling
+5) Media Screen Styling
+6) Overview Page Styling
+
+-----------------------------*/
+
+/*---------------------------
+1) Imports
+-----------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+/*---------------------------
+2) CSS Reset
+-----------------------------*/
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/*---------------------------
+2) Typography
+-----------------------------*/
+/* headers */
+h1,
+h2,
+h3 {
+    font-family: 'Merriweather', serif;
+}
+
+    h1 {
+        font-size: 1.7em;
+        padding: 1.7em;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 1.3em;
+        padding: 1.3em;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+/* paragraphs */
+p {
+    margin: 1em 1em;
+    line-height: 1.5em;
+}
+footer p {
+    margin: 0 0;
+}
+/* hide only visually, but have it available for screen readers */
+.sr-only {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+/*---------------------------
+4) Default Page Styling
+-----------------------------*/
+body {
+    background: #3D3D3D;
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    max-width: 1200px;
+    height: auto;
+    min-height: 100vh;
+    margin: 0 auto;
+    border-left: 1em double #FFFFFF;
+    border-right: 1em double #FFFFFF;
+}
+nav {
+    background: #FFFFFF;
+    text-align: center;
+}
+    nav ul {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+        /* normal nav links */
+        nav ul li {
+            list-style: none;
+        }
+            nav ul li a {
+                text-decoration: none;
+                display: block;
+                padding: 1.3em;
+                font-size: 1.3em;
+                color: #3D3D3D;
+            }
+                nav ul li a:link {
+                    color: #3D3D3D;
+                }
+                nav ul li a:visited {
+                    color: #3D3D3D;
+                }
+                nav ul li a:hover {
+                    text-decoration: underline;
+                }
+        /* active nav link */
+        nav ul li.active {
+            background-color: #3D3D3D;
+        }
+            nav ul li.active a {
+                color: #FFFFFF;
+            }
+                nav ul li.active a:link {
+                    color: #FFFFFF;
+                }
+                nav ul li.active a:visited {
+                    color: #FFFFFF;
+                }
+    
+footer {
+    text-align: center;
+    margin: 1em 0;
+}
+
+/*---------------------------
+6) Media Screen Styling
+-----------------------------*/
+@media screen and (max-width: 810px)  {
+    /* vertical nav */
+    nav ul {
+        flex-flow: column nowrap;
+        text-align: center;
+        padding-bottom: 0.5em;
+    }
+        /* normal nav links */
+        nav ul li {
+            margin-top: 0.5em;
+        }
+        nav ul li a {
+            display: block;
+            padding: 0.5em 0;
+        }
+}
+
+/*---------------------------
+6) Overview Page Styling
+-----------------------------*/
+
+#overview {
+    display: flex;
+    flex-direction: column;
+}
+    #overview figure {
+        text-align: center;
+        margin: 0 1em;
+    }
+        #overview figure img {
+            border-radius: 16px;
+            max-width: 100%;
+        }
+    #overview a {
+        background-color: #FFFFFF;
+        margin: auto;
+        padding: 1.3em;
+        color: #3D3D3D;
+        text-align: center;
+        font-size: 1.3em;
+        border-radius: 1.3em;
+        text-decoration: none;
+    }
+        #overview a:link {
+            color: #3D3D3D;
+        }
+        #overview a:visted {
+            color: #3D3D3D;
+        }
+        #overview a:hover {
+            text-decoration: underline;
+        }
