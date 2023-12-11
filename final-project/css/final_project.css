@@ -4,10 +4,13 @@ Final Project CSS Index
 
 1) Imports
 2) CSS Reset
-3) Typography
-4) Default Page Styling
+3) Default Page Styling
+4) Typography
 5) Media Screen Styling
 6) Overview Page Styling
+7) What Page Styling
+8) Why Page Styling
+9) How-To Page Styling
 
 -----------------------------*/
 
@@ -29,53 +32,7 @@ Final Project CSS Index
 }
 
 /*---------------------------
-2) Typography
------------------------------*/
-/* headers */
-h1,
-h2,
-h3 {
-    font-family: 'Merriweather', serif;
-}
-
-    h1 {
-        font-size: 1.7em;
-        padding: 1.7em;
-        text-align: center;
-    }
-
-    h2 {
-        font-size: 1.3em;
-        padding: 1.3em;
-        text-align: center;
-    }
-
-    h3 {
-        font-size: 1.2em;
-    }
-/* paragraphs */
-p {
-    margin: 1em 1em;
-    line-height: 1.5em;
-}
-footer p {
-    margin: 0 0;
-}
-/* hide only visually, but have it available for screen readers */
-.sr-only {
-    border: 0;
-    clip: rect(0, 0, 0, 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-}
-
-/*---------------------------
-4) Default Page Styling
+3) Default Page Styling
 -----------------------------*/
 body {
     background: #3D3D3D;
@@ -83,12 +40,28 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
     max-width: 1200px;
-    height: auto;
     min-height: 100vh;
+    height: auto;
     margin: 0 auto;
     border-left: 1em double #FFFFFF;
     border-right: 1em double #FFFFFF;
 }
+.skip-link {
+    background: #FFFFFF;
+    color: #3D3D3D;
+    font-family: 'Merriweather', serif;
+    padding: 4px;
+    position: absolute;
+    transform: translateY(-200%);
+}
+    .skip-link:focus {
+        transform: translateY(0%);
+    }
+
+    .skip-link {
+    /* Same as  before */
+    transition: transform 0.3s;
+    }
 nav {
     background: #FFFFFF;
     text-align: center;
@@ -105,7 +78,7 @@ nav {
             nav ul li a {
                 text-decoration: none;
                 display: block;
-                padding: 1.3em;
+                padding: 1.3rem;
                 font-size: 1.3em;
                 color: #3D3D3D;
             }
@@ -131,14 +104,62 @@ nav {
                 nav ul li.active a:visited {
                     color: #FFFFFF;
                 }
-    
 footer {
     text-align: center;
-    margin: 1em 0;
+    margin: 1rem 0;
 }
 
 /*---------------------------
-6) Media Screen Styling
+4) Typography
+-----------------------------*/
+/* headers */
+h1,
+h2,
+h3 {
+    font-family: 'Merriweather', serif;
+}
+    h1 {
+        font-size: 1.7em;
+        padding: 1.7rem 1rem;
+        text-align: center;
+    }
+    h2 {
+        font-size: 1.3em;
+        margin: 1.3rem 1rem 0 1rem;
+        text-align: center;
+    }
+    h3 {
+        font-size: 1.2em;
+        margin: 1.2rem 1rem 0 1rem;
+    }
+/* paragraphs */
+p {
+    margin: 1rem 1rem;
+    line-height: 1.5em;
+}
+footer p {
+    margin: 0 0;
+}
+/* details */
+details{
+    margin-left: 1em;
+}
+/* hide only visually, but have it available for screen readers */
+.sr-only {
+    background: #3D3D3D;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+/*---------------------------
+5) Media Screen Styling
 -----------------------------*/
 @media screen and (max-width: 810px)  {
     /* vertical nav */
@@ -167,7 +188,7 @@ footer {
 }
     #overview figure {
         text-align: center;
-        margin: 0 1em;
+        margin: 1em 1em 0 1em;
     }
         #overview figure img {
             border-radius: 16px;
@@ -192,3 +213,229 @@ footer {
         #overview a:hover {
             text-decoration: underline;
         }
+
+/*---------------------------
+7) What Page Styling
+-----------------------------*/
+
+.what-container {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-areas:
+        "written bulleted";
+}
+#what-written {
+    grid-area: written;
+    display: flex;
+    flex-direction: column;
+}
+#what-written a {
+    display: inline-block;
+    align-self: center;
+    background-color: #FFFFFF;
+    padding: 1.3em;
+    color: #3D3D3D;
+    text-align: center;
+    font-size: 1.3em;
+    border-radius: 1.3em;
+    text-decoration: none;
+}
+    #what-written a:link {
+        color: #3D3D3D;
+    }
+    #what-written a:visted {
+        color: #3D3D3D;
+    }
+    #what-written a:hover {
+        text-decoration: underline;
+    }
+#what-bulleted {
+    grid-area: bulleted;
+}
+    #what-bulleted figure {
+        text-align: center;
+        margin: 1em 1em 0 1em;
+    }
+        #what-bulleted figure img {
+            border-radius: 16px;
+            max-width: 100%;
+        }
+    #what-bulleted ul {
+        list-style-position: inside;
+        margin: 1em;
+    }
+        #what-bulleted ul li {
+            margin-left: 1em;
+        }
+        #what-bulleted ul ul {
+            margin: 0;
+        }
+            #what-bulleted ul ul li {
+                margin-left: 2em;
+            }
+    #what-bulleted ul ol {
+        margin: 0;
+    }
+        #what-bulleted ul ol li {
+            margin-left: 2em;
+        }
+@media screen and (max-width: 810px)  {
+    /* vertical nav */
+    .what-container {
+        grid-template-columns:
+            1fr;
+        grid-template-areas:
+            "written"
+            "bulleted";
+    }
+}
+
+/*---------------------------
+8) Why Page Styling
+-----------------------------*/
+
+.why-container {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-areas:
+        "written bulleted";
+}
+#why-written {
+    grid-area: written;
+    display: flex;
+    flex-direction: column;
+}
+#why-written a {
+    display: inline-block;
+    align-self: center;
+    background-color: #FFFFFF;
+    padding: 1.3em;
+    color: #3D3D3D;
+    text-align: center;
+    font-size: 1.3em;
+    border-radius: 1.3em;
+    text-decoration: none;
+}
+    #why-written a:link {
+        color: #3D3D3D;
+    }
+    #why-written a:visted {
+        color: #3D3D3D;
+    }
+    #why-written a:hover {
+        text-decoration: underline;
+    }
+#why-bulleted {
+    grid-area: bulleted;
+}
+    #why-bulleted figure {
+        text-align: center;
+        margin: 1em 1em 0 1em;
+    }
+        #why-bulleted figure img {
+            border-radius: 16px;
+            max-width: 100%;
+        }
+    #why-bulleted ul {
+        list-style-position: inside;
+        margin: 1em;
+    }
+        #why-bulleted ul li {
+            margin-left: 1em;
+        }
+        #why-bulleted ul ul {
+            margin: 0;
+        }
+            #why-bulleted ul ul li {
+                margin-left: 2em;
+            }
+@media screen and (max-width: 810px)  {
+    /* vertical nav */
+    .why-container {
+        grid-template-columns:
+            1fr;
+        grid-template-areas:
+            "written"
+            "bulleted";
+    }
+}
+
+/*---------------------------
+9) How-To Page Styling
+-----------------------------*/
+
+.how-container {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-areas:
+        "written form";
+}
+#how-written {
+    grid-area: written;
+    display: flex;
+    flex-direction: column;
+}
+#how-written figure {
+    text-align: center;
+    margin: 1em 1em 0 1em;
+}
+    #how-written figure img {
+        border-radius: 16px;
+        max-width: 100%;
+        width: 75%;
+    }
+#how-written a {
+    display: inline-block;
+    align-self: center;
+    background-color: #FFFFFF;
+    padding: 1.3em;
+    color: #3D3D3D;
+    text-align: center;
+    font-size: 1.3em;
+    border-radius: 1.3em;
+    text-decoration: none;
+}
+    #how-written a:link {
+        color: #3D3D3D;
+    }
+    #how-written a:visted {
+        color: #3D3D3D;
+    }
+    #how-written a:hover {
+        text-decoration: underline;
+    }
+#how-form {
+    grid-area: form;
+}
+    #how-form fieldset {
+        border: none;
+        margin: 1.3rem 1rem 0 1rem;
+    }
+        #how-form legend {
+            font-size: 1.3em;
+            text-align: center;
+            font-family: 'Merriweather', serif;
+        }
+        #how-form label {
+            display: block;
+            margin: 1em;
+        }
+            #how-form input[type=checkbox] {
+                width: 1.3rem;
+                height: 1.3rem;
+            }
+
+@media screen and (max-width: 810px)  {
+    /* vertical nav */
+    .how-container {
+        grid-template-columns:
+            1fr;
+        grid-template-areas:
+            "written"
+            "form";
+    }
+    #how-form input[type=checkbox] {
+        width: 2.6rem;
+        height: 2.6rem;
+    }
+}

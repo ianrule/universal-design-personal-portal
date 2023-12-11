@@ -12,26 +12,85 @@
     <link href="../css/final_project.css" rel="stylesheet">
 </head>
 <body>
-    <div class="contianer">
-        <!-- site header -->
-        <header>
-            <h1>Universal Design (<abbr>UD</abbr>) Educational Site</h1>
-        </header>
+    <!-- skip navigation -->
+    <a class="skip-link" href="#maincontent">Skip to page content</a>
+    
+    <!-- site header -->
+    <header>
+        <h1>Universal Design (<abbr>UD</abbr>) Educational Site</h1>
+    </header>
 
-        <!-- site nav -->
-        <nav>
-            <h2 class="sr-only">Site Navigation</h2>
-            <ul>
-                <li><a href="overview.html">Overview</a></li>
-                <li><a href="what.html">What is <abbr title="Universal Design">UD</abbr>?</a></li>
-                <li><a href="why.html">Why is <abbr title="Universal Design">UD</abbr> Important?</a></li>
-                <li class="active"><a href="#how"><abbr title="Universal Design">UD</abbr> How-To</a></li>
-            </ul>
-        </nav>
+    <!-- site nav -->
+    <nav>
+        <h2 class="sr-only">Site Navigation</h2>
+        <ul>
+            <li><a href="overview.html">Overview</a></li>
+            <li><a href="what.html">What is <abbr title="Universal Design">UD</abbr>?</a></li>
+            <li><a href="why.html">Why is <abbr title="Universal Design">UD</abbr> Important?</a></li>
+            <li class="active"><a href="#how"><abbr title="Universal Design">UD</abbr> How-To</a></li>
+        </ul>
+    </nav>
 
     <!-- how page main content -->
-    <main>
-        <section id="how"></section>
+    <main id="maincontent">
+        <div class="how-container">
+            <!-- written section -->
+            <section id="how-written">
+                <h2>Universal Design How-To</h2>
+                <figure>
+                    <img src="https://higheredparent.com/wp-content/uploads/2018/11/Mindset-is-everything-1080x675.jpg" alt="Mindset is everything">
+                    <figcaption>Mindset is everything</figcaption>
+                </figure>
+                <p>It is best to view the Universal Design as a design mindset rather than a set-in-stone guideline to follow. Although there are many guidelines and checklists available online to aid designers in adoption of Universal Design, <abbr title="Universal Design">UD</abbr> best practices will continue to evolve with new technology and a deeper understanding of the spectrum of human ability. My recommendation to any designer who wishes to learn more about the application of Universal Design is this: research the accessible practices currently available in your realm of design prior to jumping into the design process. For example, web designers can reference the Web Content Accessibility Guidelines as a start in making their websites a more inclusive space. Making Universal Design a priority at the beginning of your design process will save you more work in the long run as the demographic profile of our society shifts and legislation requires adherence to accessibility rules and regulations. Strive for progress in creating designs that are more inclusive, stay open to user feedback, and you are headed in the right direction. A beginner guideline in making your designs more universal can be found in the Centre for Excellence in Universal Design's article on the 7 Principles of Universal Design. For web developers, a quick start guide to making websites more universally accessible is provided in an aside on this page. Thank you for embarking on this educational journey today, and I hope you feel inspired to join us in the Universal Design movement!</p>
+            </section>
+
+            <!-- bulleted summary aside -->
+            <aside id="how-form">
+                <form id="quickstart-form">
+                    <fieldset>
+        
+                        <legend>UD Quick-Start Guide for Web Development</legend>
+        
+                        <label for="wcag">
+                            <input type="checkbox" id="wcag">
+                            Familiarize yourself with <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> (Web Content Accessibility Guidelines)
+                        </label>
+
+                        <label for="semanic-html">
+                            <input type="checkbox" id="semantic-html">
+                            Use super specific semantic HTML elements to markup your site (the <abbr title="Mozilla Developer Network">MDN</abbr> (Mozilla Developer Network) Web Docs site is a great reference for this)
+                        </label>
+                        
+                        <label for="text-equivalent">
+                            <input type="checkbox" id="text-equivalent">
+                            Provide alt-text for images and other site graphics for screen reader use
+                        </label>
+                    
+                        <label for="text-visability">
+                            <input type="checkbox" id="text-visability">
+                            Make font large enough for a variety of users to see (or give users the option to modify the size of text on your site)
+                        </label>
+
+                        <label for="color-contrast">
+                            <input type="checkbox" id="color-contrast">
+                            Use high color contrast throughout your site (check out Adobe's Color Contrast Checker)
+                        </label>
+        
+                        <label for="responsive">
+                            <input type="checkbox" id="responsive">
+                            Design your site so it is usable and responsive on both mobile, tablet, and desktop devices with CSS media queries
+                        </label>
+
+                        <label for="text-equivalent">
+                            <input type="checkbox" id="text-equivalent">
+                            Use tools such as the W3 Nu HTML Checker and the WAVE (Web Acccessibility Evaluation Tool) Google Chrome extension to test your site for comformance
+                        </label>
+                        
+        
+                    </fieldset>
+                </form>
+            </aside>
+        </div>
     </main>
 
     <!-- site footer -->
