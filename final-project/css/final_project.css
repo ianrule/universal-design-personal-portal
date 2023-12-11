@@ -106,7 +106,7 @@ nav {
                 }
 footer {
     text-align: center;
-    margin: 1rem 0;
+    margin: 1rem 0 0 0;
 }
 
 /*---------------------------
@@ -267,18 +267,18 @@ details{
         #what-bulleted ul li {
             margin-left: 1em;
         }
-        #what-bulleted ul ul {
-            margin: 0;
-        }
-            #what-bulleted ul ul li {
-                margin-left: 2em;
+            #what-bulleted ul li ul {
+                margin: 0;
             }
-    #what-bulleted ul ol {
-        margin: 0;
-    }
-        #what-bulleted ul ol li {
-            margin-left: 2em;
-        }
+                #what-bulleted ul li ul li {
+                    margin-left: 2em;
+                }
+            #what-bulleted ul li ol {
+                margin: 0;
+            }
+                #what-bulleted ul li ol li {
+                    margin-left: 2em;
+                }
 @media screen and (max-width: 810px)  {
     /* vertical nav */
     .what-container {
@@ -343,12 +343,12 @@ details{
         #why-bulleted ul li {
             margin-left: 1em;
         }
-        #why-bulleted ul ul {
-            margin: 0;
-        }
-            #why-bulleted ul ul li {
-                margin-left: 2em;
+            #why-bulleted ul li ul {
+                margin: 0;
             }
+                #why-bulleted ul li ul li {
+                    margin-left: 2em;
+                }
 @media screen and (max-width: 810px)  {
     /* vertical nav */
     .why-container {
