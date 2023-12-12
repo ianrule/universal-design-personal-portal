@@ -1,8 +1,11 @@
-
-/* import for fonts */
+/*---------------------------
+1) Imports
+-----------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@300&display=swap');
 
-/* css reset */
+/*---------------------------
+2) CSS Reset
+-----------------------------*/
 *,
 *:before,
 *:after {
@@ -11,15 +14,43 @@
     margin: 0;
 }
 
-/* default css */
-/* ----------- */
-/* body style */
+/*---------------------------
+3) Default Body Styling
+-----------------------------*/
 body {
     background-color: #FFFFFF;
     color: #000000;
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
 }
+
+/*---------------------------
+3) Typography
+-----------------------------*/
+/* headings */
+h1, h2, h3 {
+    font-family: 'Merriweather', serif;
+}
+    h1 {
+        font-size: 1.7em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+/* paragraphs */
+p {
+    line-height: 1.5em;
+    margin: 1em 1em 0 1em;
+}
+
+/*---------------------------
+4) Accessibility Classes
+-----------------------------*/
 /* skip link */
 .skip-link {
     background: black;
@@ -37,31 +68,8 @@ body {
     .skip-link {
     /* Same as  before */
     transition: transform 0.3s;
-    }
-/* headings */
-h1,
-h2,
-h3 {
-    font-family: 'Merriweather', serif;
-}
-
-h1 {
-    font-size: 1.7em;
-}
-
-h2 {
-    font-size: 1.3em;
-}
-
-h3 {
-    font-size: 1.2em;
-}
-/* paragraphs */
-p {
-    margin: 1.5em 0;
-    line-height: 1.5em;
-}
-/* hide only visually, but have it available for screen readers */
+    }   
+/* hide visually */
 .sr-only {
     border: 0;
     clip: rect(0, 0, 0, 0);
@@ -74,111 +82,136 @@ p {
     width: 1px;
 }
 
-/* page section formatting */
-/* ----------------------- */
-/* container/grid area template */
-.container {
+/*---------------------------
+4) Index Page Styling
+-----------------------------*/
+/* body container */
+.body-container {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     width: 100vw;
     height: 100vh;
-    grid-template-columns:
-        1fr;
-    grid-template-areas:
-        "mainhead"
-        "maincontent"
-        "maincontent"
-        "maincontent"
-        "pgfooter";
 }
-/* padding and border */
+/* section padding */
 header,
 #project-list,
-#about-me {
+#about-me,
+#favorite-project {
     padding: 1.5em 0 0 0;
 }
 footer {
     padding: 1.5em 0;
 }
-/* main header */
+/* header styling */
 header {
-    grid-area: mainhead;
     text-align: center;
 }
-/* main content */
-main {
-    display: grid;
-    grid-area: maincontent;
-    grid-template-columns:
-        1fr;
-    grid-template-areas:
-        "projectlist"
-        "aboutme"
-        "aboutme"
-        "aboutme";
+/* project list styling */
+#project-list h2 {
+    text-align: center;
 }
-/* project list */
-#project-list {
-    display: grid;
-    grid-area: projectlist;
+#project-list nav ul {
+    margin: 1.5em 0 0 0;
+    padding: 1.5em 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    text-align: center;
+    background: #E3E3E3;
 }
-    #project-list h2 {
-        text-align: center;
+    #project-list nav ul li {
+        list-style: none;
     }
-    #project-list nav ul {
-        margin: 1.5em 0 0 0;
-        padding: 1.5em 0;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-around;
-        text-align: center;
-        background: #E3E3E3;
+    #project-list nav ul li a {
+        text-decoration: none;
+        font-size: 1.3em;
     }
-        #project-list nav ul li {
-            list-style: none;
-        }
-        #project-list nav ul li a {
-            text-decoration: none;
-            font-size: 1.3em;
-        }
-        #project-list nav ul li a:link {
-            color: #11438F;
-        }
-        #project-list nav ul li a:visited {
-            color: #7D00FA;
-        }
-        #project-list nav ul li a:hover {
-            text-decoration: underline;
-        }
-        #project-list nav ul li a:active {
-            color: #B01700;
-        }
-/* about me section*/
+    #project-list nav ul li a:link {
+        color: #11438F;
+    }
+    #project-list nav ul li a:visited {
+        color: #7D00FA;
+    }
+    #project-list nav ul li a:hover {
+        text-decoration: underline;
+    }
+    #project-list nav ul li a:active {
+        color: #B01700;
+    }
+/* about me styling*/
 #about-me {
     display: grid;
-    grid-area: aboutme;
+    grid-template-columns:
+    45% 55%;
+    grid-template-areas:
+        "aboutmefig aboutmehead"
+        "aboutmefig aboutmep";
 }
-    #about-me img {
-        border-radius: 50%;
-        width: 250px;
-        height: 250px;
-        display: block;
-        margin: 1.5em auto 0 auto;
-    }
-    #about-me figcaption {
+    #about-me h2 {
+        display: grid;
+        grid-area: aboutmehead;
         text-align: center;
+    }
+    #about-me figure {
+        display: grid;
+        grid-area: aboutmefig;
+    }
+        #about-me img {
+            border-radius: 50%;
+            width: 250px;
+            height: 250px;
+            display: block;
+            margin: 1.5em auto 0 auto;
+        }
+        #about-me figcaption {
+            text-align: center;
+        }
+    #about-me p {
+        display: grid;
+        grid-area: aboutmep;
+    }
+/* favorite project styling */
+#favorite-project {
+    display: grid;
+    grid-template-columns:
+    55% 45%;
+    grid-template-areas:
+        "favoritehead favoritefig"
+        "favoritep favoritefig";
+    padding-bottom: 1.5em;
+}
+    #favorite-project h2 {
+        display: grid;
+        grid-area: favoritehead;
+        text-align: center;
+    }
+    #favorite-project figure {
+        display: grid;
+        grid-area: favoritefig;
+    }
+        #favorite-project img {
+            border-radius: 50%;
+            width: 250px;
+            height: 250px;
+            display: block;
+            margin: 1.5em auto 0 auto;
+        }
+        #favorite-project figcaption {
+            text-align: center;
+        }
+    #favorite-project p {
+        display: grid;
+        grid-area: favoritep;
     }
 /* footer */
 footer {
-    grid-area: pgfooter;
     background: #232A33;
     text-align: center;
     color: white;
 }
-    footer p {
-        margin: 0 0;
-    }
 /* media screens */
 @media screen
 and (min-width: 641px)
@@ -199,7 +232,8 @@ and (max-width: 640px)  {
     /* padding and border */
     header,
     #project-list,
-    #about-me {
+    #about-me,
+    #favorite-project {
         padding: 1.3em 0 0 0;
         margin: 0 1.3em;
     }
@@ -222,7 +256,24 @@ and (max-width: 640px)  {
             background: #E3E3E3;
         }
     /* about me section */
-    #about-me img {
-        margin: 1.3em auto 0 auto;
+    #about-me {
+        grid-template-columns:
+            1fr;
+        grid-template-areas:
+            "aboutmehead"
+            "aboutmefig"
+            "aboutmep";
+    }
+        #about-me img {
+            margin: 1.3em auto 0 auto;
+        }
+    /* favorite project section */
+    #favorite-project {
+        grid-template-columns:
+            1fr;
+        grid-template-areas:
+            "favoritehead"
+            "favoritefig"
+            "favoritep";
     }
 }
